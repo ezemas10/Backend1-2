@@ -11,7 +11,7 @@ socket.on("listaProductos", (productos) => {
 
     const li = document.createElement("li");
 
-    li.innerHTML = `<strong>${p.id}</strong> - ${p.titulo}`;
+    li.innerHTML = `<strong>${p.id}</strong> - ${p.title}`;
 
     ul.appendChild(li);
 
@@ -19,7 +19,7 @@ socket.on("listaProductos", (productos) => {
 
  
   divProductos.innerHTML = "";
-  
+
   divProductos.appendChild(ul);
 
 });

@@ -78,8 +78,11 @@ productsRouter.post("/", async (req, res) => {
     if (!newProduct) {
       return res.status(400).send("Ya existe un producto con ese código");
     }
+
+    let listaProductos = await ProductsManager.getProducts();
+    req.socket.emit("listaProductos", listaProductos);
     
-      res.status(200).json(newProduct);
+    res.status(200).json(newProduct);
 
     }
 
@@ -109,6 +112,9 @@ productsRouter.put("/:pid", async (req, res) => {
       return res.status(404).send("Producto no encontrado");
     }
 
+    let listaProductos = await ProductsManager.getProducts();
+    req.socket.emit("listaProductos", listaProductos);
+
     res.json(product);
 
   }
@@ -135,7 +141,10 @@ productsRouter.delete("/:pid", async (req, res) => {
         return res.status(404).send("Producto no encontrado");
       }
 
-      res.json(product);
+    let listaProductos = await ProductsManager.getProducts();
+    req.socket.emit("listaProductos", listaProductos);
+
+    res.json(product);
 
   }
 

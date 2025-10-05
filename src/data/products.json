@@ -1,65 +1,93 @@
 [
  {
-  "id": "2",
-  "titulo": "Curauña",
-  "precio": 20000,
+  "id": 2,
+  "title": "Curauña",
+  "description": "Preparado líquido de uso externo formulado para tratar hongos en las uñas",
+  "code": "2",
+  "price": 20000,
+  "status": true,
   "stock": 5,
-  "descripcion": "Preparado líquido de uso externo formulado para tratar hongos en las uñas",
-  "categoria": "preparados",
-  "imageUrl": "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163052/product2_wrye1g.webp"
+  "category": "preparados",
+  "thumbnails": [
+   "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163052/product2_wrye1g.webp"
+  ]
  },
  {
-  "id": "3",
-  "titulo": "Ortesis Polidigital",
-  "precio": 5000,
+  "id": 3,
+  "title": "Ortesis Polidigital",
+  "description": "Gel Polímero",
+  "code": "3",
+  "price": 5000,
+  "status": true,
   "stock": 4,
-  "descripcion": "Gel Polímero",
-  "categoria": "ortopedia",
-  "imageUrl": "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163053/product3_xna4nj.webp"
+  "category": "ortopedia",
+  "thumbnails": [
+   "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163053/product3_xna4nj.webp"
+  ]
  },
  {
-  "id": "4",
-  "titulo": "Actium Cuidado Facial",
-  "precio": 8000,
-  "stock": 5,
-  "descripcion": "Crema facial que hidrata, nutre y mejora la firmeza y luminosidad de la piel.",
-  "categoria": "cremas",
-  "imageUrl": "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163054/product4_z1kiqk.webp"
+  "id": 5,
+  "title": "Dermacler Crema",
+  "description": "Crema nutritiva que humecta, tonifica y mejora la firmeza y elasticidad de la piel.",
+  "code": "4",
+  "price": 3999,
+  "status": true,
+  "stock": 15,
+  "category": "cremas",
+  "thumbnails": [
+   "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163055/product5_jkyubr.webp"
+  ]
  },
  {
-  "id": "5",
-  "titulo": "Dermacler Crema",
-  "precio": 9000,
-  "stock": 10,
-  "descripcion": "Crema nutritiva que humecta, tonifica y mejora la firmeza y elasticidad de la piel.",
-  "categoria": "cremas",
-  "imageUrl": "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163055/product5_jkyubr.webp"
- },
- {
-  "id": "6",
-  "titulo": "Pasem Freshar",
-  "precio": 7000,
+  "id": 6,
+  "title": "Pasem Freshar",
+  "description": "Crema hidratante para pies secos, con karité y urea",
+  "code": "5",
+  "price": 7000,
+  "status": true,
   "stock": 6,
-  "descripcion": "Crema hidratante para pies secos, con karité y urea",
-  "categoria": "cremas",
-  "imageUrl": "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163056/product6_ae0pak.webp"
+  "category": "cremas",
+  "thumbnails": [
+   "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163056/product6_ae0pak.webp"
+  ]
  },
  {
-  "id": "7",
-  "titulo": "Diabecler HHH",
-  "precio": 8000,
-  "stock": 8,
-  "descripcion": "Emulsión hidratante para piel muy seca o dañada.",
-  "categoria": "cremas",
-  "imageUrl": "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163057/product7_rp6dfj.webp"
+  "id": 7,
+  "title": "Crema para pies",
+  "description": "Crema hidratante intensiva",
+  "code": "CREMA123",
+  "price": 4500,
+  "status": true,
+  "stock": 20,
+  "category": "cremas",
+  "thumbnails": [
+   "https://upload.wikimedia.org/wikipedia/commons/6/6b/Feet_cream.jpg"
+  ]
  },
  {
-  "id": "8",
-  "titulo": "Pieloldo",
-  "precio": 6000,
-  "stock": 10,
-  "descripcion": "Polvo desodorante para pies extra absobente.",
-  "categoria": "ortopedia",
-  "imageUrl": "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163058/product8_h43mlr.webp"
+  "id": 9,
+  "title": "Plantilla Ortopédica ConfortGel",
+  "description": "Plantilla de gel diseñada para aliviar la presión y mejorar la postura al caminar.",
+  "code": "PLANT001",
+  "price": 8700,
+  "status": true,
+  "stock": 18,
+  "category": "ortopedia",
+  "thumbnails": [
+   "https://upload.wikimedia.org/wikipedia/commons/3/3f/Shoe_insole_gel.jpg"
+  ]
+ },
+ {
+  "id": 12,
+  "title": "Talco Podológico Antibacteriano 2",
+  "description": "Talco desodorante con óxido de zinc y ácido bórico, ideal para mantener los pies secos y prevenir hongos.",
+  "code": "TALC006",
+  "price": 12400,
+  "status": true,
+  "stock": 30,
+  "category": "podologia",
+  "thumbnails": [
+   "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163052/talco_podologico_antibacteriano.webp"
+  ]
  }
 ]
