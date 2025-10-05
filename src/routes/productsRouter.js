@@ -62,6 +62,48 @@ productsRouter.get("/:pid", async (req, res) => {
 
 
 
+productsRouter.post("/:pid", async (req, res) => {
+
+  try{
+
+
+    let {pid, title, description, code, price, status, stock, category, thumbnails} = req.body;
+
+
+    if (!title || !description || !code || price == null || status == null || stock == null || !category) {
+      return res.status(400).send("Falta información");
+    }
+
+    let product = await ProductsManager.getProductById(pid);
+    if (product) return res.status(400).send("Ya existe un producto con ese id");
+    
+    
+    let newProduct = await ProductsManager.addProductById(pid, title, description, code, Number(price), Boolean(status), Number(stock), category, thumbnails);
+
+
+    if (!newProduct) {
+      return res.status(400).send("No se pudo crear el producto");
+    }
+
+    let listaProductos = await ProductsManager.getProducts();
+    req.socket.emit("listaProductos", listaProductos);
+    
+    res.status(200).json(newProduct);
+
+    }
+
+  catch(error){
+
+    console.log(error)
+
+    res.status(500).send("Internal Server Error");
+
+  }
+
+});
+
+
+
 productsRouter.post("/", async (req, res) => {
 
   try{
@@ -111,9 +153,6 @@ productsRouter.put("/:pid", async (req, res) => {
   if (!product) {
       return res.status(404).send("Producto no encontrado");
     }
-
-    let listaProductos = await ProductsManager.getProducts();
-    req.socket.emit("listaProductos", listaProductos);
 
     res.json(product);
 
