@@ -24,6 +24,7 @@ cartsRouter.post("/", async (req, res) => {
 
 
 
+
 cartsRouter.get("/:cid", async (req, res) => {
 
   try {
@@ -36,6 +37,36 @@ cartsRouter.get("/:cid", async (req, res) => {
     console.log(error)
 
     res.status(500).send("Internal Server Error")
+
+  }
+
+})
+
+
+
+cartsRouter.get("/", async (req, res) => {
+
+  try{
+
+    let carts = await CartsManager.getCarts();
+
+    if (!carts || carts.length === 0) {
+      return res.status(404).send("No existen carritos");
+    }
+
+    let carritos = JSON.stringify(carts, null, 1)
+
+    res.status(200).send(
+      carritos
+    );
+
+  }
+
+  catch(error){
+
+    console.log(error)
+
+    res.status(500).send("Internal Server Error");
 
   }
 

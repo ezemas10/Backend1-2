@@ -26,19 +26,6 @@
   ]
  },
  {
-  "id": 5,
-  "title": "Dermacler Crema",
-  "description": "Crema nutritiva que humecta, tonifica y mejora la firmeza y elasticidad de la piel.",
-  "code": "4",
-  "price": 3999,
-  "status": true,
-  "stock": 15,
-  "category": "cremas",
-  "thumbnails": [
-   "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163055/product5_jkyubr.webp"
-  ]
- },
- {
   "id": 6,
   "title": "Pasem Freshar",
   "description": "Crema hidratante para pies secos, con karité y urea",
@@ -78,16 +65,81 @@
   ]
  },
  {
-  "id": 12,
-  "title": "Talco Podológico Antibacteriano 2",
+  "id": 13,
+  "title": "Talco Podológico Antibacteriano 3",
   "description": "Talco desodorante con óxido de zinc y ácido bórico, ideal para mantener los pies secos y prevenir hongos.",
-  "code": "TALC006",
+  "code": "TALC007",
   "price": 12400,
   "status": true,
   "stock": 30,
   "category": "podologia",
   "thumbnails": [
    "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163052/talco_podologico_antibacteriano.webp"
+  ]
+ },
+ {
+  "id": 14,
+  "title": "Talco Podológico Antibacteriano 4",
+  "description": "Talco desodorante con óxido de zinc y ácido bórico, ideal para mantener los pies secos y prevenir hongos.",
+  "code": "TALC007",
+  "price": 12400,
+  "status": true,
+  "stock": 30,
+  "category": "podologia",
+  "thumbnails": [
+   "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163052/talco_podologico_antibacteriano.webp"
+  ]
+ },
+ {
+  "id": 15,
+  "title": "Talco Podológico Antibacteriano 2000",
+  "description": "Talco desodorante con óxido de zinc y ácido bórico, ideal para mantener los pies secos y prevenir hongos.",
+  "code": "TALC007",
+  "price": 12400,
+  "status": true,
+  "stock": 30,
+  "category": "podologia",
+  "thumbnails": [
+   "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163052/talco_podologico_antibacteriano.webp"
+  ]
+ },
+ {
+  "id": 17,
+  "title": "Talco Podológico Antibacteriano 3000",
+  "description": "Talco desodorante con óxido de zinc y ácido bórico, ideal para mantener los pies secos y prevenir hongos.",
+  "code": "TALC007",
+  "price": 12400,
+  "status": true,
+  "stock": 30,
+  "category": "podologia",
+  "thumbnails": [
+   "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163052/talco_podologico_antibacteriano.webp"
+  ]
+ },
+ {
+  "id": 18,
+  "title": "Talco Podológico Antibacteriano 4000",
+  "description": "Talco desodorante con óxido de zinc y ácido bórico, ideal para mantener los pies secos y prevenir hongos.",
+  "code": "TALC007",
+  "price": 12400,
+  "status": true,
+  "stock": 30,
+  "category": "podologia",
+  "thumbnails": [
+   "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163052/talco_podologico_antibacteriano.webp"
+  ]
+ },
+ {
+  "id": 20,
+  "title": "Spray Refrescante para Pies",
+  "description": "Spray con mentol y eucalipto que refresca, desodoriza y alivia la fatiga de los pies luego de largas jornadas.",
+  "code": "SPRAY009",
+  "price": 16300,
+  "status": true,
+  "stock": 28,
+  "category": "podologia",
+  "thumbnails": [
+   "https://res.cloudinary.com/drzhqvhh9/image/upload/v1754163052/spray_refrescante_pies.webp"
   ]
  }
 ]

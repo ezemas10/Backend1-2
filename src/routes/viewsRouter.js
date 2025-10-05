@@ -41,7 +41,7 @@ viewsRouter.get("/carritos/:cid", async (req, res) => {
   try {
     let cart = await CartsManager.getCartById(req.params.cid)
 
-    res.status(200).render("views", {
+    res.status(200).render("home", {
             contenido: JSON.stringify(cart.products,null,1), nombrePag: `Carrito Número: ${cart.id}`,
 
         })
@@ -72,7 +72,7 @@ viewsRouter.get("/carritos", async (req, res) => {
 
         let carritos = JSON.stringify(carts , null, 1)
 
-        res.status(200).render("views", {
+        res.status(200).render("home", {
             contenido: carritos, nombrePag: "Carritos",
 
         })
@@ -104,7 +104,7 @@ viewsRouter.get("/productos/:pid", async (req, res) => {
 
       let respuesta = JSON.stringify(product, null, 1);
       
-      res.status(200).render("views", {
+      res.status(200).render("home", {
             contenido: respuesta, nombrePag: `Producto Número: ${product.id}`,
 
         })
@@ -136,7 +136,7 @@ viewsRouter.get("/productos", async (req, res) => {
 
         let productos = JSON.stringify(products, null, 1)
 
-        res.status(200).render("views", {
+        res.status(200).render("home", {
             contenido: productos, nombrePag: "Productos",
 
         })
@@ -166,9 +166,11 @@ viewsRouter.get("/products/:pid", async (req, res) => {
     if (!product) {
         return res.status(404).send("Producto no encontrado");
       }
+
+      let respuesta = JSON.stringify(product, null, 1);
       
       res.status(200).render("home", {
-            contenido: [product], nombrePag: `Producto Número: ${product.id}`,
+            contenido: respuesta, nombrePag: `Producto Número: ${product.id}`,
 
         })
 
@@ -197,8 +199,10 @@ viewsRouter.get("/products", async (req, res) => {
         return res.status(404).send("No existen productos");
         }
 
+        let productos = JSON.stringify(products, null, 1)
+
         res.status(200).render("home", {
-            contenido: products, nombrePag: "Productos",
+            contenido: productos, nombrePag: "Productos",
 
         })
     }
@@ -212,7 +216,7 @@ viewsRouter.get("/products", async (req, res) => {
     }
 
   }
-);
+)
 
 
 

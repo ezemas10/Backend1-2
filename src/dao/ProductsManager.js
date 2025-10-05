@@ -34,9 +34,6 @@ class ProductsManager {
   static async addProduct(title, description, code, price, status, stock, category, thumbnails) {
     
     await this.getProducts();
-
-    let exist = this.#products.find(p => p.code == code);
-    if (exist) return null;
     
     let id = 1;
 
@@ -62,33 +59,6 @@ class ProductsManager {
 
   }
 
-
-
-   static async addProductById(id, title, description, code, price, status, stock, category, thumbnails) {
-    
-    await this.getProducts();
-
-    let exist = this.#products.find(p => Number(p.id) === Number(id));
-    if (exist) return null;
-    
-
-    let nuevoProducto = {
-      id: Number(id),
-      title,
-      description,
-      code,
-      price,
-      status,
-      stock,
-      category,
-      thumbnails
-    };
-
-    this.#products.push(nuevoProducto);
-    await fs.promises.writeFile(this.path, JSON.stringify(this.#products, null, 1));
-    return nuevoProducto;
-
-  }
 
 
 

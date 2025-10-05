@@ -4,35 +4,6 @@ const ProductsManager = require("../dao/ProductsManager.js");
 const productsRouter=Router()
 
 
-productsRouter.get("/", async (req, res) => {
-
-  try{
-
-    let products = await ProductsManager.getProducts();
-
-    if (!products || products.length === 0) {
-      return res.status(404).send("No existen productos");
-    }
-
-    let productos = JSON.stringify(products, null, 1)
-
-    res.status(200).send(
-      productos
-    );
-
-  }
-
-  catch(error){
-
-    console.log(error)
-
-    res.status(500).send("Internal Server Error");
-
-  }
-
-});
-
-
 
 productsRouter.get("/:pid", async (req, res) => {
 
@@ -62,35 +33,23 @@ productsRouter.get("/:pid", async (req, res) => {
 
 
 
-productsRouter.post("/:pid", async (req, res) => {
+productsRouter.get("/", async (req, res) => {
 
   try{
 
+    let products = await ProductsManager.getProducts();
 
-    let {pid, title, description, code, price, status, stock, category, thumbnails} = req.body;
-
-
-    if (!title || !description || !code || price == null || status == null || stock == null || !category) {
-      return res.status(400).send("Falta información");
+    if (!products || products.length === 0) {
+      return res.status(404).send("No existen productos");
     }
 
-    let product = await ProductsManager.getProductById(pid);
-    if (product) return res.status(400).send("Ya existe un producto con ese id");
-    
-    
-    let newProduct = await ProductsManager.addProductById(pid, title, description, code, Number(price), Boolean(status), Number(stock), category, thumbnails);
+    let productos = JSON.stringify(products, null, 1)
 
+    res.status(200).send(
+      productos
+    );
 
-    if (!newProduct) {
-      return res.status(400).send("No se pudo crear el producto");
-    }
-
-    let listaProductos = await ProductsManager.getProducts();
-    req.socket.emit("listaProductos", listaProductos);
-    
-    res.status(200).json(newProduct);
-
-    }
+  }
 
   catch(error){
 
@@ -101,6 +60,7 @@ productsRouter.post("/:pid", async (req, res) => {
   }
 
 });
+
 
 
 
@@ -167,6 +127,7 @@ productsRouter.put("/:pid", async (req, res) => {
   }
 
 });
+
 
 
 
