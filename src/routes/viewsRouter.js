@@ -6,6 +6,35 @@ const viewsRouter=Router()
 
 
 
+viewsRouter.get("/realtimeproducts", async (req, res) => {
+
+  try{
+
+        let listaProductos = await ProductsManager.getProducts();
+
+        if (!listaProductos || listaProductos.length === 0) {
+        return res.status(404).send("No existen productos");
+        }
+
+        req.socket.emit("listaProductos", listaProductos)
+
+        res.status(200).render("realTimeProducts", {
+            contenido: listaProductos, nombrePag: "Productos en Tiempo Real",
+
+        })
+    }
+
+    catch(error){
+
+        console.log(error)
+
+        res.status(500).send("Internal Server Error");
+
+    }
+
+  }
+)
+
 
 viewsRouter.get("/carritos/:cid", async (req, res) => {
 
@@ -185,34 +214,6 @@ viewsRouter.get("/products", async (req, res) => {
   }
 );
 
-
-
-viewsRouter.get("/realtimeproducts", async (req, res) => {
-
-  try{
-
-        let products = await ProductsManager.getProducts();
-
-        if (!products || products.length === 0) {
-        return res.status(404).send("No existen productos");
-        }
-
-        res.status(200).render("realTimeProducts", {
-            contenido: products, nombrePag: "Productos en Tiempo Real",
-
-        })
-    }
-
-    catch(error){
-
-        console.log(error)
-
-        res.status(500).send("Internal Server Error");
-
-    }
-
-  }
-)
 
 
 module.exports={viewsRouter}

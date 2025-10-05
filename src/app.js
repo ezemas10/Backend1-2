@@ -4,23 +4,50 @@ const { productsRouter } = require("./routes/productsRouter.js")
 const { viewsRouter } =require("./routes/viewsRouter.js")
 const { engine } = require("express-handlebars")
 
+const {Server} = require("socket.io")
+
 
 const PORT = 8080;
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded( {extended: true} ) ) ;
 
+app.use(express.static("./src/public"))
+
 app.engine("hbs", engine({extname: "hbs"}));
 app.set("view engine", "hbs")
 app.set("views", "./src/views")
 
+
+
+app.use( "/", (req, res, next) => {
+
+    req.socket = serverSocket;
+    next();
+  },
+
+  viewsRouter
+
+);
+
+
+
+app.use( "/api/products", (req, res, next) => {
+
+    req.socket = serverSocket;
+    next();
+
+  },
+
+  productsRouter
+
+);
+
+
 app.use("/api/carts", cartsRouter)
-app.use("/api/products", productsRouter)
-app.use("/", viewsRouter)
 
 
-
-app.get("/", (req, res)=>{
+app.get("/", (req, res) => {
   
     res.status(200).render("index", {
         ok: "ok"
@@ -28,6 +55,11 @@ app.get("/", (req, res)=>{
     })
 })
 
-app.listen(PORT, ()=>{
+
+
+const serverHTTP = app.listen(PORT, ()=>{
     console.log(`http://localhost:${PORT} Server running on port ${PORT}`)
 })
+
+
+const serverSocket = new Server(serverHTTP)

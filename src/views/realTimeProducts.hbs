@@ -1,7 +1,14 @@
 <h1>{{nombrePag}}</h1><hr>
 
-<ul>
-    {{#each contenido}}
-        <li><strong>{{id}}</strong> - {{titulo}}</li>
-    {{/each}} 
-</ul>
+<div id="productos">
+    <ul>
+        {{#each contenido}}
+            <li><strong>{{id}}</strong> - {{titulo}}</li>
+        {{/each}} 
+    </ul>
+</div>
+
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realTimeProducts.js"></script>
+
